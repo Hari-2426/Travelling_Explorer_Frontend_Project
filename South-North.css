@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body - center everything */
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Lighter gradient */
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #00ffe0;
+    text-shadow: 0 0 5px #00ffe0,0 0 15px #00ffe0;
+    animation: fadeInDown 1s ease forwards;
+}
+header .tagline {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-top: 12px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {opacity:0; transform:translateY(-30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+@keyframes fadeInUp {
+    from {opacity:0; transform:translateY(30px) scale(0.97);}
+    to {opacity:1; transform:translateY(0) scale(1);}
+}
+@keyframes fadeIn {
+    from {opacity:0;} to {opacity:1;}
+}
+
+/* Container / Card */
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s; /* default delay */
+}
+
+/* Staggered animation using helper classes */
+.container.animate-delay-1 { animation-delay: 0.2s; }
+.container.animate-delay-2 { animation-delay: 0.4s; }
+.container.animate-delay-3 { animation-delay: 0.6s; }
+.container.animate-delay-4 { animation-delay: 0.8s; }
+.container.animate-delay-5 { animation-delay: 1s; }
+
+/* Andhra Pradesh minimal effect */
+#ap {
+    background: transparent;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+}
+
+/* Other states effect */
+.container:not(#ap) {
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.container h2 {
+    margin-top:10px;
+    margin-bottom:15px;
+    color:#00ffe0;
+    text-shadow:0 0 3px #000;
+    text-align: center;
+}
+
+/* Images */
+.container img {
+    width: 100%;
+    max-width:400px;
+    height:220px;
+    border-radius:12px;
+    box-shadow:0 3px 15px rgba(0,0,0,0.3);
+    object-fit:cover;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,255,224,0.4);
+    cursor:pointer;
+}
+
+/* Paragraph */
+.container p {
+    text-align: center;
+    font-size:17px;
+    margin: 12px 0;
+}
+
+/* List */
+.container ul {
+    list-style:none;
+    padding:10px;
+    width:100%;
+}
+.container li {
+    padding:10px;
+    font-size:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    background: rgba(255,255,255,0.06);
+    color:#fff;
+    text-align: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.container li:hover {
+    background: linear-gradient(135deg,#00ffe0,#2adfff);
+    transform: scale(1.03);
+}
+
+/* Back Button */
+.contain {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:40px 0;
+    width: 100%;
+}
+.contain button {
+    background: linear-gradient(135deg,#00ffe0,#2adfff);
+    color:#fff;
+    padding:12px 28px;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contain button:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,255,224,0.5);
+}
+
+/* Responsive */
+@media(max-width:600px){
+    header h1 {font-size:32px;}
+    .container img {height:180px;}
+    .container p, .container li {font-size:14px;}
+    .contain button {font-size:16px; padding:12px 20px;}
+}
